@@ -20,7 +20,7 @@ class DashboardController extends Controller
        if ($user->role === 'admin') {
     return view('dashboard.dashboardAdmin');
 } elseif ($user->role === 'caissier') {
-    return view('dashboard.dashboarCaissier');
+    return view('dashboard.dashboardCaissier');
 } 
 
     }
