@@ -1,0 +1,90 @@
+.amazon-card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    transition: 0.2s ease;
+}
+
+.amazon-card:hover {
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transform: translateY(-3px);
+}
+
+.amazon-img-wrapper {
+    position: relative;
+    height: 140px;
+    overflow: hidden;
+}
+
+.amazon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.amazon-badge {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    padding: 4px 8px;
+    font-size: 11px;
+    border-radius: 4px;
+    color: #fff;
+}
+
+.badge-success {
+    background: #28a745;
+}
+
+.badge-danger {
+    background: #dc3545;
+}
+
+.amazon-body {
+    padding: 8px;
+    text-align: center;
+}
+
+.amazon-title {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.amazon-price {
+    font-size: 14px;
+    font-weight: bold;
+    color: #B12704;
+}
+
+.amazon-footer {
+    border-top: 1px solid #f1f1f1;
+    padding-top: 5px;
+}
+
+.icon-btn {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    border: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.icon-btn.edit {
+    background: #e3f2fd;
+    color: #0d6efd;
+}
+
+.icon-btn.delete {
+    background: #fdecea;
+    color: #dc3545;
+}
+
+.icon-btn:hover {
+    transform: scale(1.1);
+}

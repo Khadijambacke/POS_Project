@@ -110,7 +110,7 @@
             <span class="section-title">Gestion</span>
 
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="{{ route('vueproduit.index') }}" class="nav-link">
                     <i class="bi bi-box-seam"></i> Produits
                 </a>
             </li>
@@ -120,7 +120,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href="" class="nav-link">
                     <i class="bi bi-archive"></i> Stock
                 </a>
             </li>

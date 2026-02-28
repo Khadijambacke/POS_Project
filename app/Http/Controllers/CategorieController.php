@@ -9,7 +9,6 @@ use App\Models\Produit;
 
 class CategorieController extends Controller
 {
-
     public function index()
     {
         $categories = Categorie::all();
@@ -21,55 +20,40 @@ class CategorieController extends Controller
         $validated = $request->validate([
             'nom'         => 'required|string|max:255',
             'description' => 'nullable|string',
-            'statut'      => 'required|in:actif,inactif',
+         
         ]);
 
         Categorie::create($validated);
 
         return redirect()
-            ->route('categories.index')
+            ->route('toutcategrie')
             ->with('success', 'Catégorie créée avec succès');
     } 
-    public function edit($id)
+    public function edit($categorie)
     {
-        $categorie = Categorie::findOrFail($id);
+        $categorie = Categorie::findOrFail($categorie);
         return view('categories.edit', compact('categorie'));
 
     }
-  
-    public function update(Request $request,  Categorie $categorie)
+    public function update(Request $request,$categorie)
     {
         $categorie = Categorie::findOrFail($categorie);
-
-        $validated = $request->validate([
-            'nom'         => 'required|string|max:255',
-            'description' => 'nullable|string',
-            'statut'      => 'required|in:actif,inactif',
-        ]);
-
-        $categorie->update($validated);
-        if ($validated['statut'] === 'inactif') {
-            Produit::where('categories_id', $categorie->id)
-                   ->update(['statut' => 'enrupture']);
-        } else { 
-            Produit::where('categories_id', $categorie->id)
-                   ->update(['statut' => 'disponible']);
-        }
     
+        $validated = $request->validate([
+            'nom'       => 'required|string|max:255',
+            'description' => 'required|string|max:255',
+        ]);
+        $categorie->update($validated);
         return redirect()
-            ->route('categories.index')
-            ->with('success', 'Catégorie modifiée avec succès');
+            ->route('toutcategrie')
+            ->with('success', 'Categorie mis à jour avec succès');
+        
     }
-
-
-    public function delete($id)
-    {
-        $categorie = Categorie::findOrFail($id);
+    
+    public function  delete(Request $request,$categorie){
+        $categorie = Categorie::findOrFail($categorie);
         $categorie->delete();
-
-        return redirect()
-            ->route('categories.index')
-            ->with('success', 'Catégorie supprimée avec succès');
+        return redirect()->route('toutcategrie');
     }
 }
 

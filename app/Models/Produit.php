@@ -8,7 +8,7 @@ class Produit extends Model
 {
     
     protected $fillable = [
-        'categories_id',  
+     'categories_id',  
         'nom',          
         'code_barre',     
         'description',   
@@ -19,7 +19,7 @@ class Produit extends Model
         'statut'          
     ];
     public function categorie() {
-        return $this->belongsTo(Categorie::class);
+        return $this->belongsTo(Categorie::class ,foreignKey: 'categories_id');
     }
     public function ventes() {
         return $this->hasMany(Vente::class, 'produits_id');
