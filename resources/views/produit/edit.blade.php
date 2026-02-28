@@ -35,8 +35,6 @@
                            class="form-control form-control-sm">
                 </div>
 
-                
-
                 <div class="row">
                     <div class="col-6 mb-3">
                         <label class="form-label fw-semibold">Prix Achat</label>
@@ -52,6 +50,7 @@
                                class="form-control form-control-sm">
                     </div>
                 </div>
+                
 
                 <div class="row">
                     <div class="col-6 mb-3">

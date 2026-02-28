@@ -2,6 +2,12 @@
 @section('contenu')
 <link rel="stylesheet" href="{{ asset('ressources/css/showproduit.css') }}">
 <div class="container mt-4">
+<div class="text-center mt-4">
+    <h5>Code-barres</h5>
+
+    <img src="data:image/png;base64,{{ DNS1D::getBarcodePNG($produit->code_barre, 'C128', $width=2, $height=60, $color=[0,0,0], $showText=true ) }}" alt="barcode">
+    <!-- getBarcodePNG :fonction qui prend le code a generer , le genere suivant la norme C.. et affiche le code bar -->
+</div>
 
 <div class="container mt-4 d-flex justify-content-center">
     <div class="product-show-card shadow-sm rounded d-flex flex-column">
