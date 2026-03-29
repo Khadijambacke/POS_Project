@@ -1,3 +1,32 @@
+Application Web de Point de Vente (POS)
+Description
+
+Cette application web de point de vente (POS) a été développée avec Laravel afin de simplifier la gestion des ventes, des produits et des stocks au sein d’un commerce.
+
+Elle permet d’automatiser les opérations de caisse et d’assurer un suivi efficace des transactions à travers une interface intuitive et adaptée à un usage quotidien.
+
+Fonctionnalités
+Administrateur
+Gestion des produits (création, modification, suppression)
+Gestion des catégories
+Suivi des stocks
+Consultation des ventes
+Accès à un tableau de bord global
+Caissier
+Enregistrement des ventes
+Ajout de produits au panier
+Calcul automatique du total
+Génération de reçus
+Consultation rapide des produits disponibles
+Gestion des ventes
+Ajout de plusieurs produits dans une même transaction
+Calcul automatique du montant total
+Enregistrement des transactions
+Historique des ventes
+
+
+
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
