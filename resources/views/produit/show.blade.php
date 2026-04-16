@@ -4,11 +4,11 @@
 <div class="container mt-4">
 <div class="text-center mt-4">
     <h5>Code-barres</h5>
-
-    <img src="data:image/png;base64,{{ DNS1D::getBarcodePNG($produit->code_barre, 'C128', $width=2, $height=60, $color=[0,0,0], $showText=true ) }}" alt="barcode">
+    @if($produit->code_barre)
+         <img src="data:image/png;base64,{{ DNS1D::getBarcodePNG($produit->code_barre, 'C128', $width=2, $height=60, $color=[0,0,0], $showText=true ) }}" alt="barcode">
     <!-- getBarcodePNG :fonction qui prend le code a generer , le genere suivant la norme C.. et affiche le code bar -->
+    @endif
 </div>
-
 <div class="container mt-4 d-flex justify-content-center">
     <div class="product-show-card shadow-sm rounded d-flex flex-column">
 
@@ -25,8 +25,6 @@
                 {{ $produit->statut }}
             </span>
         </div>
-
-
         <div class="product-info flex-grow-1 px-3 py-2 text-center">
             <h2 class="fw-bold">{{ $produit->nom }}</h2>
             <div class="h4 text-danger">{{ number_format($produit->prix_vente,0,',',' ') }} FCFA</div>

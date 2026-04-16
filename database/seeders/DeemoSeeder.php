@@ -8,7 +8,6 @@ use App\Models\User;
 use App\Models\Categorie;
 use App\Models\Produit;
 
-
 class DeemoSeeder extends Seeder
 {
     /**
@@ -16,6 +15,7 @@ class DeemoSeeder extends Seeder
      */
     public function run(): void
     {
+        
         User::create([ 
             'name' => 'Admin', 
             'email' => 'admin@test.com', 

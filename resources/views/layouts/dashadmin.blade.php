@@ -141,7 +141,7 @@
             <span class="section-title">Utilisateurs</span>
 
             <li class="nav-item">
-                <a href="#" class="nav-link">
+                <a href=""{{ route ('personnels.index')}} class="nav-link">
                     <i class="bi bi-people"></i> Caissiers
                 </a>
             </li>
