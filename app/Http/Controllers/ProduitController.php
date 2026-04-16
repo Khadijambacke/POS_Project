@@ -17,7 +17,6 @@ class ProduitController extends Controller
 
     }
     
-
     public function store(Request $request)
 {
     $imageName = null;
@@ -26,6 +25,7 @@ class ProduitController extends Controller
         $image = $request->file('image');
         $imageName = time().'.'.$image->getClientOriginalExtension();
         $image->move(public_path('ressources/assets'), $imageName);
+    
     }
     if(empty($request->code_barre)){
         do {

@@ -9,7 +9,9 @@ use App\Http\Controllers\AuthControllers;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProduitController;
 use App\Http\Controllers;
+use App\Http\Controllers\UserController;
 use App\Models\Produit;
+use App\Models\User;
 
 Route::get('/', function () {
     return view('welcome');
@@ -37,4 +39,7 @@ Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::delete('/dashboardadmin/categories/{categorie}', [CategorieController::class, 'delete'])->name(name: 'deletecategorie');
     ///mes produits
     Route::resource('dashboardadmin/produit', ProduitController::class)->names('vueproduit');
+    ///mes produits
+    Route::resource('dashboardadmin/personnels', UserController::class)->names('personnels');
+    
 });

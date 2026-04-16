@@ -1,9 +1,6 @@
 @extends('layouts.dashadmin')
-
 @section('contenu')
-
 <div class="container mt-4">
-
     <div class="card shadow border-0">
         <div class="card-header bg-success text-white">
             <h5 class="mb-0">
@@ -50,8 +47,6 @@
                                class="form-control form-control-sm">
                     </div>
                 </div>
-                
-
                 <div class="row">
                     <div class="col-6 mb-3">
                         <label class="form-label fw-semibold">Stock</label>
@@ -70,11 +65,8 @@
     </select>
 </div>
                     </div>
-                   
-
-
                     <div class="col-6 mb-3">
-                        <label class="form-label fw-semibold">Catégorie *</label>
+                        <label class="form-label fw-semibold">Catégorie</label>
                         <select name="categories_id" class="form-select form-select-sm" required>
                             @foreach($categories as $categorie)
                                 <option value="{{ $categorie->id }}"

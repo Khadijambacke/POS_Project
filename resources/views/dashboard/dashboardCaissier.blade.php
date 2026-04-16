@@ -185,13 +185,12 @@
 
         .btn-vider:hover { background-color: #b02a37; color: #fff; }
 
-        /* Table */
+        
         .table th { border-top: none; }
     </style>
 </head>
 <body>
 
-    <!-- ===== SIDEBAR ===== -->
     <nav class="sidebar p-2">
 
         <div class="sidebar-brand mb-3">
@@ -223,7 +222,7 @@
 
         </ul>
 
-        <!-- Infos caissier + Déconnexion -->
+      
         <div class="px-2 pb-3 mt-auto">
             <div class="text-center mb-3 p-2" style="background:#2d3748; border-radius:8px;">
                 <i class="bi bi-person-circle fs-3 text-success"></i>
@@ -241,10 +240,9 @@
 
     </nav>
 
-    <!-- ===== CONTENT ===== -->
+    
     <div class="content">
 
-        <!-- Header -->
         <div class="top-header">
             <div>
                 <h5 class="mb-0 fw-bold">Bienvenue, {{ Auth::user()->name }} 👋</h5>
@@ -298,10 +296,10 @@
 
         </div>
 
-        <!-- Zone de vente -->
+       
         <div class="row g-4">
 
-            <!-- Scanner + Panier -->
+           
             <div class="col-md-8">
                 <div class="card section-card">
                     <div class="card-header">
@@ -309,7 +307,7 @@
                     </div>
                     <div class="card-body">
 
-                        <!-- Champ scan -->
+                     
                         <div class="input-group mb-4">
                             <span class="input-group-text bg-success text-white border-0">
                                 <i class="bi bi-upc-scan"></i>
@@ -323,7 +321,7 @@
                             />
                         </div>
 
-                        <!-- Tableau panier -->
+                      
                         <table class="table table-hover panier-table">
                             <thead class="table-light">
                                 <tr>
@@ -335,7 +333,7 @@
                                 </tr>
                             </thead>
                             <tbody id="panier-body">
-                                {{-- Les produits scannés apparaîtront ici --}}
+                               
                                 <tr id="panier-vide">
                                     <td colspan="5" class="text-center text-muted py-4">
                                         <i class="bi bi-cart-x fs-3 d-block mb-2"></i>
@@ -357,7 +355,7 @@
                     </div>
                     <div class="card-body">
 
-                        <!-- Totaux -->
+                        
                         <div class="total-box mb-3">
                             <div class="d-flex justify-content-between mb-2">
                                 <span class="total-label">Sous-total</span>
