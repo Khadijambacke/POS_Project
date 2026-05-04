@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\Produit;
 use App\Models\Categorie;
@@ -12,20 +11,16 @@ class ProduitController extends Controller
     public function index()
     {
         $produits=Produit::all();
-        $categories = Categorie::all(); 
+        $categories = Categorie::all();
         return view('produit.index', compact('produits', 'categories'));
-
     }
-    
     public function store(Request $request)
 {
     $imageName = null;
-
     if($request->hasFile('image')){
         $image = $request->file('image');
         $imageName = time().'.'.$image->getClientOriginalExtension();
         $image->move(public_path('ressources/assets'), $imageName);
-    
     }
     if(empty($request->code_barre)){
         do {
@@ -47,20 +42,15 @@ class ProduitController extends Controller
     ]);
     return redirect()->back();
 }
- 
     public function edit($produit)
     {
         $produit = Produit::findOrFail($produit);
         $categories = Categorie::all();
-
         return view('produit.edit', compact('produit', 'categories'));
     }
-
-  
     public function update(Request $request, $produit)
     {
         $produit = Produit::findOrFail($produit);
-
         $validated = $request->validate([
             'categories_id' => 'required|exists:categories,id',
             'nom'           => 'required|string|max:255',
@@ -75,9 +65,7 @@ class ProduitController extends Controller
         if ($request->hasFile('image')) {
             $validated['image'] = $request->file('image')->store('produits', 'public');
         }
-
         $produit->update($validated);
-
         return redirect()
             ->route('vueproduit.index')
             ->with('success', 'Produit mis à jour avec succès');
@@ -85,18 +73,16 @@ class ProduitController extends Controller
     public function show($produit)
     {
         $produit = Produit::with('categorie')->findOrFail($produit);
-        
         ///retun redirect:(nom de ma route)
-
         return view('produit.show', compact('produit'));
     }
-
-
+    public function Allshow($produit){
+        $produit = Produit::all($produit);
+    }
     public function destroy($produit)
     {
         $produit = Produit::findOrFail($produit);
         $produit->delete();
-
         return redirect()
             ->route('vueproduit.index')
             ->with('success', 'Produit supprimé avec succès');
